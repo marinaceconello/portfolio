@@ -92,15 +92,90 @@
   }
   @keyframes subir{ to{ opacity: 1; transform: translateY(0); } }
 
-  /* ---------- HERO ---------- */
+  /* ---------- TELA INICIAL (sem rolagem) ---------- */
+  .home-screen{
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+  }
+
   .hero{
     position: relative;
-    padding: 3rem 1.5rem 3rem;
-    max-width: 860px;
+    max-width: 640px;
     margin: 0 auto;
     text-align: center;
     overflow: hidden;
   }
+
+  .indice-home{
+    list-style: none;
+    padding: 0;
+    margin: 2.2rem 0 0;
+    display: grid;
+    gap: 0.15rem;
+    position: relative;
+    z-index: 1;
+  }
+  .indice-home button{
+    all: unset;
+    cursor: pointer;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.7rem;
+    padding: 0.55rem 0;
+    font-family: var(--font-editorial);
+    font-style: italic;
+    font-weight: 700;
+    font-size: clamp(1.05rem, 3.6vw, 1.35rem);
+    color: var(--lavanda);
+    transition: color 0.25s ease;
+  }
+  .indice-home button .num{
+    font-family: var(--font-body);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: var(--lilas);
+  }
+  .indice-home button:hover{ color: var(--azul); }
+  .indice-home button:hover .num{ color: var(--azul); }
+
+  /* ---------- APP (depois de escolher uma seção) ---------- */
+  .app-screen{ display: none; }
+  .app-screen.ativo{ display: block; }
+
+  .barra-voltar{
+    position: sticky; top: 0; z-index: 11;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 1.5rem;
+    background: rgba(16,0,41,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(232,230,251,0.12);
+  }
+  .link-voltar{
+    all: unset; cursor: pointer;
+    font-family: var(--font-script);
+    color: var(--lilas);
+    font-size: 1.3rem;
+  }
+  .link-voltar:hover{ color: var(--azul); }
+
+  /* ---------- blocos com cores variadas ---------- */
+  .card--azul{ background: var(--azul); color: var(--roxo-fundo); }
+  .card--azul .stat, .card--azul .numero-grande{ color: var(--roxo-fundo); }
+  .card--azul p, .card--azul .stat-label, .card--azul h3{ color: var(--roxo-fundo); }
+  .card--azul::before, .card--azul::after{ border-color: var(--roxo-fundo); opacity: 0.45; }
+  .card--azul:hover{ box-shadow: 0 26px 54px rgba(99,149,236,0.35); }
+
+  .card--lilas{ background: var(--lilas); color: var(--roxo-fundo); }
+  .card--lilas .stat, .card--lilas .numero-grande{ color: var(--roxo-fundo); }
+  .card--lilas p, .card--lilas .stat-label, .card--lilas h3{ color: var(--roxo-fundo); }
+  .card--lilas::before, .card--lilas::after{ border-color: var(--roxo-fundo); opacity: 0.45; }
+  .card--lilas:hover{ box-shadow: 0 26px 54px rgba(146,130,223,0.35); }
 
   .hero-media{
     position: absolute;
@@ -183,15 +258,10 @@
     letter-spacing: 0.02em;
   }
 
-  /* ---------- TABS ---------- */
+  /* ---------- TABS (dentro da barra-voltar) ---------- */
   .tabs{
-    position: sticky; top: 0; z-index: 10;
-    display: flex; gap: 0;
+    display: flex; gap: 0.2rem;
     overflow-x: auto;
-    background: rgba(16,0,41,0.92);
-    backdrop-filter: blur(6px);
-    border-top: 1px solid rgba(232,230,251,0.12);
-    border-bottom: 1px solid rgba(232,230,251,0.12);
     scrollbar-width: none;
   }
   .tabs::-webkit-scrollbar{ display:none; }
@@ -201,11 +271,11 @@
     background: none; border: none;
     color: var(--lavanda);
     font-family: var(--font-body);
-    font-size: 0.92rem;
-    padding: 1rem 1.3rem;
+    font-size: 0.85rem;
+    padding: 0.6rem 0.8rem;
     cursor: pointer;
     opacity: 0.55;
-    display: flex; align-items: baseline; gap: 0.45rem;
+    display: flex; align-items: baseline; gap: 0.4rem;
     border-bottom: 2px solid transparent;
     white-space: nowrap;
     transition: opacity 0.2s, border-color 0.2s;
@@ -394,32 +464,40 @@
 
 <div class="bg-glow"></div>
 
-<header class="hero">
-  <div class="hero-media" id="hero-media">
-    <img src="media/ornamento.jpg" alt="" onload="document.getElementById('hero-media').classList.add('cheio')">
-  </div>
-  <div class="hero-conteudo">
-    <span class="assinatura revela" style="animation-delay:.1s">marina</span>
-    <h1 class="revela" style="animation-delay:.2s">Ceconello</h1>
-    <p class="dica-ornamento">espaço reservado: solte sua imagem em media/ornamento.jpg</p>
-    <p class="cargo revela" style="animation-delay:.3s">Designer, social media e video maker</p>
-    <p class="bio-curta revela" style="animation-delay:.4s">Crio identidades e conteúdo pra quem quer aparecer sem parecer todo mundo.</p>
-    <div class="badges revela" style="animation-delay:.5s">
-      <span>Design</span>
-      <span>Social Media</span>
-      <span>Vídeo</span>
-      <span>3D</span>
+<!-- TELA INICIAL: uma página só, sem rolagem, com o nome e o índice -->
+<div class="home-screen" id="home-screen">
+  <header class="hero">
+    <div class="hero-media" id="hero-media">
+      <img src="media/ornamento.jpg" alt="" onload="document.getElementById('hero-media').classList.add('cheio'); document.getElementById('dica-ornamento').style.display='none';">
     </div>
-  </div>
-</header>
+    <div class="hero-conteudo">
+      <span class="assinatura revela" style="animation-delay:.1s">marina</span>
+      <h1 class="revela" style="animation-delay:.2s">Ceconello</h1>
+      <p class="dica-ornamento" id="dica-ornamento">espaço reservado: solte sua imagem em media/ornamento.jpg</p>
+      <p class="cargo revela" style="animation-delay:.3s">portfólio pessoal</p>
+      <ul class="indice-home revela" style="animation-delay:.45s" role="list">
+        <li><button type="button" data-tab="1"><span class="num">01</span> Quem sou</button></li>
+        <li><button type="button" data-tab="2"><span class="num">02</span> Social Media</button></li>
+        <li><button type="button" data-tab="3"><span class="num">03</span> Vídeo</button></li>
+        <li><button type="button" data-tab="4"><span class="num">04</span> 3D</button></li>
+        <li><button type="button" data-tab="5"><span class="num">05</span> Design</button></li>
+      </ul>
+    </div>
+  </header>
+</div>
 
-<nav class="tabs" role="tablist" aria-label="Seções do portfólio">
-  <button class="tab-btn" role="tab" aria-selected="true" data-tab="1"><span class="num">01</span> Quem sou</button>
-  <button class="tab-btn" role="tab" aria-selected="false" data-tab="2"><span class="num">02</span> Social Media</button>
-  <button class="tab-btn" role="tab" aria-selected="false" data-tab="3"><span class="num">03</span> Vídeo</button>
-  <button class="tab-btn" role="tab" aria-selected="false" data-tab="4"><span class="num">04</span> 3D</button>
-  <button class="tab-btn" role="tab" aria-selected="false" data-tab="5"><span class="num">05</span> Design</button>
-</nav>
+<!-- TELA DE CONTEÚDO: aparece só depois de clicar num item do índice -->
+<div class="app-screen" id="app-screen">
+  <div class="barra-voltar">
+    <button type="button" class="link-voltar" id="botao-voltar">marina</button>
+    <nav class="tabs" role="tablist" aria-label="Seções do portfólio">
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="1"><span class="num">01</span> Quem sou</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="2"><span class="num">02</span> Social Media</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="3"><span class="num">03</span> Vídeo</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="4"><span class="num">04</span> 3D</button>
+      <button class="tab-btn" role="tab" aria-selected="false" data-tab="5"><span class="num">05</span> Design</button>
+    </nav>
+  </div>
 
 <main>
 
@@ -501,12 +579,12 @@
         <span class="stat-label">impressões no carrossel "Trajetória profissional" (LinkedIn)</span>
         <p>108 reações, 57 visitas ao perfil e 8 salvamentos num só post.</p>
       </div>
-      <div class="card surge">
+      <div class="card card--azul surge">
         <span class="stat">7.797</span>
         <span class="stat-label">views no Reel "bola ou mídia?" sobre o Vini Jr (Instagram)</span>
         <p>7,74% de taxa de interação, o melhor Reel da retomada do perfil.</p>
       </div>
-      <div class="card surge">
+      <div class="card card--lilas surge">
         <span class="stat">22,3%</span>
         <span class="stat-label">taxa de interação no post "comenta aí se vc concorda"</span>
         <p>A maior taxa de interação do mês, num post de baixo custo de produção.</p>
@@ -540,7 +618,7 @@
     <p class="kicker">da gravação à edição, ideia vira vídeo pronto pra rede</p>
 
     <div class="grid">
-      <div class="card surge">
+      <div class="card card--lilas surge">
         <span class="numero-grande">180+</span>
         <p>vídeos editados: roteirização, direção, captação e edição.</p>
       </div>
@@ -575,7 +653,7 @@
     <p>Modelagem 3D e animação básica, desenvolvidas na FIAP, no curso de Game Development.</p>
 
     <div class="grid">
-      <div class="card surge">
+      <div class="card card--azul surge">
         <span class="numero-grande">35</span>
         <p>troféus desenhados, 5 produzidos, para premiações.</p>
       </div>
@@ -605,16 +683,16 @@
         <h3>Taiken Consultoria (TCC)</h3>
         <p>Design de logotipo, paleta e tipografia, confecção de uniformes e produção de vídeo de apresentação da marca. Projeto de planejamento estratégico completo.</p>
       </div>
-      <div class="card surge">
+      <div class="card card--lilas surge">
         <h3>Este site</h3>
         <p>As cores, as fontes e as molduras que você está vendo agora seguem o meu próprio manual de marca pessoal. Prova de conceito, aplicada na prática.</p>
       </div>
     </div>
 
     <div class="grid">
-      <div class="card surge"><span class="numero-grande">8</span><p>marcas criadas do zero: logotipo, identidade visual, portfólio, manual de marca e website</p></div>
+      <div class="card card--azul surge"><span class="numero-grande">8</span><p>marcas criadas do zero: logotipo, identidade visual, portfólio, manual de marca e website</p></div>
       <div class="card surge"><span class="numero-grande">9</span><p>sites publicados: landing pages e sites institucionais em WordPress, HTML, SEO e formulários</p></div>
-      <div class="card surge"><span class="numero-grande">500+</span><p>artes postadas, entre peças institucionais e operacionais</p></div>
+      <div class="card card--lilas surge"><span class="numero-grande">500+</span><p>artes postadas, entre peças institucionais e operacionais</p></div>
     </div>
 
     <p class="section-title">Marcas que já criei do zero</p>
@@ -649,20 +727,40 @@
 </main>
 
 <footer>Marina Ceconello · Portfólio pessoal</footer>
+</div>
 
 <script>
-  const botoes = document.querySelectorAll('.tab-btn');
+  const telaInicial = document.getElementById('home-screen');
+  const telaConteudo = document.getElementById('app-screen');
+  const botaoVoltar = document.getElementById('botao-voltar');
   const paineis = document.querySelectorAll('.panel');
+  const abasConteudo = document.querySelectorAll('.app-screen .tab-btn');
+  const linksIndice = document.querySelectorAll('.indice-home button');
 
-  botoes.forEach(botao => {
+  function abrirSecao(numero){
+    abasConteudo.forEach(b => b.setAttribute('aria-selected', b.dataset.tab === numero ? 'true' : 'false'));
+    paineis.forEach(p => p.classList.remove('active'));
+    document.getElementById('tab-' + numero).classList.add('active');
+    telaInicial.style.display = 'none';
+    telaConteudo.classList.add('ativo');
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    revelarVisiveis();
+  }
+
+  linksIndice.forEach(botao => {
+    botao.addEventListener('click', () => abrirSecao(botao.dataset.tab));
+  });
+
+  abasConteudo.forEach(botao => {
     botao.addEventListener('click', () => {
-      botoes.forEach(b => b.setAttribute('aria-selected', 'false'));
-      paineis.forEach(p => p.classList.remove('active'));
-      botao.setAttribute('aria-selected', 'true');
-      document.getElementById('tab-' + botao.dataset.tab).classList.add('active');
+      abrirSecao(botao.dataset.tab);
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      revelarVisiveis();
     });
+  });
+
+  botaoVoltar.addEventListener('click', () => {
+    telaConteudo.classList.remove('ativo');
+    telaInicial.style.display = 'flex';
   });
 
   const observador = new IntersectionObserver((entradas) => {
@@ -680,7 +778,6 @@
       observador.observe(el);
     });
   }
-  revelarVisiveis();
 </script>
 
 </body>
