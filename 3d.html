@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D — Marina Ceconello</title>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="bg-glow"></div>
+
+<div class="barra-nav">
+  <a class="logo-voltar" href="index.html">marina</a>
+  <nav class="nav-paginas" aria-label="Categorias do portfólio">
+    <a href="sobre.html"><span class="num">01</span> Quem sou</a>
+    <a href="social-media.html"><span class="num">02</span> Social Media</a>
+    <a href="videos.html"><span class="num">03</span> Vídeo</a>
+    <a href="3d.html" aria-current="page"><span class="num">04</span> 3D</a>
+    <a href="design.html"><span class="num">05</span> Design</a>
+  </nav>
+</div>
+
+<main>
+  <h2>3D</h2>
+  <p class="kicker">modelagem e animação, do conceito ao render</p>
+  <p>Modelagem 3D e animação básica, desenvolvidas na FIAP, no curso de Game Development.</p>
+
+  <div class="grid">
+    <div class="card card--azul surge">
+      <span class="numero-grande">35</span>
+      <p>troféus desenhados, 5 produzidos, para premiações.</p>
+    </div>
+  </div>
+
+  <p class="section-title">Galeria</p>
+  <p class="aviso">Marina, coloca seus modelos na pasta "media" com estes nomes: modelo-3d-1.jpg e modelo-3d-2.jpg (ou .mp4 se for um giro renderizado).</p>
+  <div class="midia-grid">
+    <div class="midia-slot surge">
+      <img src="media/modelo-3d-1.jpg" alt="Modelo 3D" onload="this.closest('.midia-slot').classList.add('cheio')">
+      <div class="midia-vazia"><div class="icone">3D</div><span>Modelo em destaque</span><small>media/modelo-3d-1.jpg</small></div>
+    </div>
+    <div class="midia-slot surge">
+      <img src="media/modelo-3d-2.jpg" alt="Modelo 3D" onload="this.closest('.midia-slot').classList.add('cheio')">
+      <div class="midia-vazia"><div class="icone">3D</div><span>Modelo em destaque</span><small>media/modelo-3d-2.jpg</small></div>
+    </div>
+  </div>
+</main>
+
+<footer>Marina Ceconello · Portfólio pessoal</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

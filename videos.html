@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vídeos — Marina Ceconello</title>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="bg-glow"></div>
+
+<div class="barra-nav">
+  <a class="logo-voltar" href="index.html">marina</a>
+  <nav class="nav-paginas" aria-label="Categorias do portfólio">
+    <a href="sobre.html"><span class="num">01</span> Quem sou</a>
+    <a href="social-media.html"><span class="num">02</span> Social Media</a>
+    <a href="videos.html" aria-current="page"><span class="num">03</span> Vídeo</a>
+    <a href="3d.html"><span class="num">04</span> 3D</a>
+    <a href="design.html"><span class="num">05</span> Design</a>
+  </nav>
+</div>
+
+<main>
+  <h2>Vídeo</h2>
+  <p class="kicker">da gravação à edição, ideia vira vídeo pronto pra rede</p>
+
+  <div class="grid">
+    <div class="card card--lilas surge">
+      <span class="numero-grande">180+</span>
+      <p>vídeos editados: roteirização, direção, captação e edição.</p>
+    </div>
+  </div>
+
+  <ul class="lista-limpa">
+    <li>Gravação e edição de vídeo institucional para grupo empresarial</li>
+    <li>Produção de vídeo apresentando a marca, para a Taiken Consultoria</li>
+    <li>Edição de vídeos curtos para Reels, TikToks e Shorts</li>
+  </ul>
+
+  <p class="section-title">Galeria</p>
+  <p class="aviso">Marina, coloca seus arquivos na pasta "media" com estes nomes: video-institucional.mp4 e video-reel.mp4.</p>
+  <div class="midia-grid">
+    <div class="midia-slot surge">
+      <video src="media/video-institucional.mp4" muted loop playsinline controls
+        onloadeddata="this.closest('.midia-slot').classList.add('cheio')"></video>
+      <div class="midia-vazia"><div class="icone">▷</div><span>Vídeo institucional</span><small>media/video-institucional.mp4</small></div>
+    </div>
+    <div class="midia-slot surge">
+      <video src="media/video-reel.mp4" muted loop playsinline controls
+        onloadeddata="this.closest('.midia-slot').classList.add('cheio')"></video>
+      <div class="midia-vazia"><div class="icone">▷</div><span>Reel ou short</span><small>media/video-reel.mp4</small></div>
+    </div>
+  </div>
+</main>
+
+<footer>Marina Ceconello · Portfólio pessoal</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

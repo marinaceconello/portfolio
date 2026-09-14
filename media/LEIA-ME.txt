@@ -1,23 +1,23 @@
 Marina, é só colocar os arquivos aqui dentro com estes nomes exatos
 que eles aparecem sozinhos no site (sem precisar mexer no código):
 
-ORNAMENTO DA ABERTURA (a imagem que você vai escolher)
-  ornamento.jpg
+FOTO DE CAPA DA PÁGINA INICIAL
+  capa.jpg
 
-ABA SOCIAL MEDIA
+PÁGINA SOCIAL MEDIA
   video-social-1.mp4   ("POV: você trabalha só com mulheres")
   video-social-2.mp4   ("POV: única mulher")
   video-social-3.mp4   ("POV: o patrão deu liberdade / laCreme")
 
-ABA VÍDEO
+PÁGINA VÍDEO
   video-institucional.mp4
   video-reel.mp4
 
-ABA 3D
+PÁGINA 3D
   modelo-3d-1.jpg   (ou troque a linha no HTML pra .mp4 se for um giro renderizado)
   modelo-3d-2.jpg
 
-ABA DESIGN
+PÁGINA DESIGN
   identidade-taiken.jpg
   uniformes.jpg
   peca-design.jpg
@@ -25,7 +25,6 @@ ABA DESIGN
 Dicas rápidas:
 - Vídeos em .mp4, fotos em .jpg (funciona com .png também, só troque a extensão no HTML).
 - Pra vídeo, tenta manter o arquivo abaixo de 20-30MB pra carregar rápido.
-- O ornamento.jpg é o único espaço que fica na tela de abertura, atrás do seu nome.
-  Se você não colocar nada, a abertura continua limpa, só com o texto.
-- Depois de subir os arquivos aqui, é só fazer o commit no GitHub Pages que o site atualiza sozinho.
+- A capa.jpg é a foto de fundo da página inicial, atrás do "Portfólio".
+  Se você não colocar nada, a página inicial continua limpa, só com o texto.
 - Pode apagar este arquivo quando terminar, ele é só um lembrete e não aparece pro visitante.
