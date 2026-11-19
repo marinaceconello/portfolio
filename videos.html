@@ -59,22 +59,19 @@
     </div>
   </div>
 
-  <p class="section-title surge">Horizontais · Institucional</p>
-  <p class="aviso surge">Marina, arrasta seus vídeos horizontais pra pasta "media" com estes nomes: institucional-1.mp4, institucional-2.mp4.</p>
+  <p class="section-title surge">Vídeos do YouTube</p>
   <div class="videos-grid horizontais">
-    <div class="video-card surge" id="inst-1" onmouseenter="this.querySelector('video').play()" onmouseleave="this.querySelector('video').pause()">
-      <video src="media/institucional-1.mp4" muted loop playsinline preload="metadata"
-        onloadeddata="document.getElementById('inst-1').classList.add('cheio')"></video>
-      <div class="midia-vazia"><div class="icone">▷</div><span>Vídeo institucional</span><small>media/institucional-1.mp4</small></div>
-      <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-      <div class="legenda"><span class="titulo">Vídeo institucional</span></div>
+    <div class="video-card youtube surge">
+      <iframe src="https://www.youtube.com/embed/NwFDEwCSitA" title="Vídeo do YouTube" loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <div class="video-card surge" id="inst-2" onmouseenter="this.querySelector('video').play()" onmouseleave="this.querySelector('video').pause()">
-      <video src="media/institucional-2.mp4" muted loop playsinline preload="metadata"
-        onloadeddata="document.getElementById('inst-2').classList.add('cheio')"></video>
-      <div class="midia-vazia"><div class="icone">▷</div><span>Vídeo institucional</span><small>media/institucional-2.mp4</small></div>
-      <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-      <div class="legenda"><span class="titulo">Vídeo institucional</span></div>
+    <div class="video-card youtube surge">
+      <iframe src="https://www.youtube.com/embed/7i1DN2uo-rw" title="Vídeo do YouTube" loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="video-card youtube surge">
+      <iframe src="https://www.youtube.com/embed/kFsWtZX6qUk" title="Vídeo do YouTube" loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>
 </main>
