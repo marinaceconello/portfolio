@@ -235,10 +235,17 @@ main .kicker{
 
 .surge{
   opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.7s cubic-bezier(.2,.8,.2,1), transform 0.7s cubic-bezier(.2,.8,.2,1);
+  transform: translateY(34px) scale(0.965);
+  transition: opacity 0.9s cubic-bezier(.16,1,.3,1), transform 0.9s cubic-bezier(.16,1,.3,1);
+  will-change: opacity, transform;
 }
-.surge.visivel{ opacity: 1; transform: translateY(0); }
+.surge.visivel{ opacity: 1; transform: translateY(0) scale(1); }
+
+/* variação com leve rotação lateral, pra cards que merecem mais dinamismo */
+.surge-esq{ transform: translateY(34px) translateX(-18px) scale(0.965) rotate(-1.2deg); }
+.surge-esq.visivel{ transform: translateY(0) translateX(0) scale(1) rotate(0deg); }
+.surge-dir{ transform: translateY(34px) translateX(18px) scale(0.965) rotate(1.2deg); }
+.surge-dir.visivel{ transform: translateY(0) translateX(0) scale(1) rotate(0deg); }
 
 .card{
   position: relative;
