@@ -32,7 +32,7 @@
   <p class="kicker surge">marca, do conceito ao manual de uso</p>
 
   <p class="section-title surge">Manuais de identidade visual completos</p>
-  <p class="aviso surge">Marina, coloca os prints de capa de cada projeto na pasta "media" com estes nomes: capa-taiken.jpg e capa-grupo-atlas.jpg.</p>
+  <p class="aviso surge">Marina, capas em media/capa-taiken.jpg e media/capa-grupo-atlas.jpg. Os slides do manual vão em media/behance/ (taiken-1.jpg, taiken-2.jpg... e atlas-1.jpg, atlas-2.jpg...).</p>
   <div class="grid capas">
     <div class="capa-card surge" onclick="document.getElementById('modal-taiken').classList.add('aberto')" role="button" tabindex="0" onkeydown="if(event.key==='Enter') this.click()">
       <div class="capa-img">
@@ -117,16 +117,26 @@
   </div>
 </main>
 
-<div class="behance-modal" id="modal-taiken" onclick="if(event.target===this) this.classList.remove('aberto')">
+<div class="behance-modal" id="modal-taiken" data-link="https://www.behance.net/gallery/218520233/TAIKEN-Identidade-Visual" data-prefixo="media/behance/taiken-" data-max="12" onclick="if(event.target===this) this.classList.remove('aberto')">
   <div class="behance-modal-conteudo">
     <button class="fechar-modal" onclick="document.getElementById('modal-taiken').classList.remove('aberto')" aria-label="Fechar">✕</button>
-    <iframe src="https://www.behance.net/embed/project/218520233?ilo0=1" loading="lazy" allowfullscreen title="Manual de Identidade Visual — Taiken Consultoria"></iframe>
+    <div class="carrossel">
+      <div class="slides"></div>
+      <button class="seta ant" aria-label="Anterior">‹</button>
+      <button class="seta prox" aria-label="Próximo">›</button>
+      <div class="contador"></div>
+    </div>
   </div>
 </div>
-<div class="behance-modal" id="modal-atlas" onclick="if(event.target===this) this.classList.remove('aberto')">
+<div class="behance-modal" id="modal-atlas" data-link="https://www.behance.net/gallery/240668843/Manual-de-Identidade-Visual-Grupo-Atlas" data-prefixo="media/behance/atlas-" data-max="12" onclick="if(event.target===this) this.classList.remove('aberto')">
   <div class="behance-modal-conteudo">
     <button class="fechar-modal" onclick="document.getElementById('modal-atlas').classList.remove('aberto')" aria-label="Fechar">✕</button>
-    <iframe src="https://www.behance.net/embed/project/240668843?ilo0=1" loading="lazy" allowfullscreen title="Manual de Identidade Visual — Grupo Atlas"></iframe>
+    <div class="carrossel">
+      <div class="slides"></div>
+      <button class="seta ant" aria-label="Anterior">‹</button>
+      <button class="seta prox" aria-label="Próximo">›</button>
+      <div class="contador"></div>
+    </div>
   </div>
 </div>
 
