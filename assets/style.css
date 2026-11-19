@@ -325,6 +325,27 @@ main .kicker{
   gap: 1rem; margin-bottom: 2.5rem;
 }
 
+.midia-slot.instagram{
+  aspect-ratio: auto;
+  max-height: none;
+  background: var(--painel);
+  border: 1px solid var(--acento-fraca);
+  display: flex;
+  flex-direction: column;
+}
+.midia-slot.instagram iframe{
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border: 0;
+  display: block;
+}
+.legenda-insta{
+  padding: 0.9rem 1.1rem;
+  font-size: 0.82rem;
+  opacity: 0.8;
+}
+.legenda-insta strong{ color: var(--acento); }
+
 .lista-limpa{ list-style: none; padding: 0; margin: 0 0 2.2rem; display: grid; gap: 0.55rem; }
 .lista-limpa li{ padding-left: 1.1rem; position: relative; font-size: 0.95rem; opacity: 0.88; }
 .lista-limpa li::before{
