@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
+<body data-acento="lilas">
 
 <div class="bg-glow"></div>
 
@@ -15,27 +15,27 @@
   <a class="logo-voltar" href="index.html">marina</a>
   <nav class="nav-paginas" aria-label="Categorias do portfólio">
     <a href="sobre.html"><span class="num">01</span> Quem sou</a>
-    <a href="social-media.html"><span class="num">02</span> Social Media</a>
-    <a href="videos.html"><span class="num">03</span> Vídeo</a>
-    <a href="3d.html" aria-current="page"><span class="num">04</span> 3D</a>
-    <a href="design.html"><span class="num">05</span> Design</a>
+    <a href="videos.html"><span class="num">02</span> Vídeos</a>
+    <a href="design.html"><span class="num">03</span> Design</a>
+    <a href="social-media.html"><span class="num">04</span> Social Media</a>
+    <a href="3d.html" aria-current="page"><span class="num">05</span> 3D</a>
   </nav>
 </div>
 
 <main>
-  <h2>3D</h2>
-  <p class="kicker">modelagem e animação, do conceito ao render</p>
-  <p>Modelagem 3D e animação básica, desenvolvidas na FIAP, no curso de Game Development.</p>
+  <h2 class="surge">3D</h2>
+  <p class="kicker surge">modelagem e animação, do conceito ao render</p>
+  <p class="surge">Modelagem 3D e animação básica, desenvolvidas na FIAP, no curso de Game Development.</p>
 
   <div class="grid">
-    <div class="card card--azul surge">
+    <div class="card surge">
       <span class="numero-grande">35</span>
       <p>troféus desenhados, 5 produzidos, para premiações.</p>
     </div>
   </div>
 
-  <p class="section-title">Galeria</p>
-  <p class="aviso">Marina, coloca seus modelos na pasta "media" com estes nomes: modelo-3d-1.jpg e modelo-3d-2.jpg (ou .mp4 se for um giro renderizado).</p>
+  <p class="section-title surge">Galeria</p>
+  <p class="aviso surge">Marina, coloca seus modelos na pasta "media" com estes nomes: modelo-3d-1.jpg e modelo-3d-2.jpg (ou .mp4 se for um giro renderizado).</p>
   <div class="midia-grid">
     <div class="midia-slot surge">
       <img src="media/modelo-3d-1.jpg" alt="Modelo 3D" onload="this.closest('.midia-slot').classList.add('cheio')">
@@ -49,6 +49,12 @@
 </main>
 
 <footer>Marina Ceconello · Portfólio pessoal</footer>
+
+<div class="botoes-flutuantes">
+  <a class="botao-flutuante" href="https://wa.me/5511972637970" target="_blank" rel="noopener" aria-label="Falar no WhatsApp" title="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.85.5 3.57 1.43 5.05L2 22l5.25-1.5a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.03c-.25.7-1.45 1.33-2 1.42-.51.08-1.15.11-1.86-.12-.43-.13-.98-.31-1.69-.6-2.98-1.29-4.92-4.28-5.07-4.48-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.6-.37.8-.37h.58c.19 0 .43-.02.63.48.25.62.84 2.1.91 2.25.07.15.12.33.02.52-.1.2-.15.33-.3.5-.15.17-.32.38-.46.51-.15.15-.3.31-.13.6.17.3.78 1.26 1.67 2.04 1.15 1.02 2.12 1.35 2.42 1.5.3.15.48.13.65-.05.21-.23.76-.86.96-1.16.2-.3.4-.25.66-.15.26.1 1.65.78 1.93.92.28.15.47.22.54.34.07.13.07.74-.18 1.43z"/></svg>
+  </a>
+</div>
 
 <script src="assets/script.js"></script>
 </body>
