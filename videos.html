@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
+<body data-acento="azul">
 
 <div class="bg-glow"></div>
 
@@ -15,47 +15,71 @@
   <a class="logo-voltar" href="index.html">marina</a>
   <nav class="nav-paginas" aria-label="Categorias do portfólio">
     <a href="sobre.html"><span class="num">01</span> Quem sou</a>
-    <a href="social-media.html"><span class="num">02</span> Social Media</a>
-    <a href="videos.html" aria-current="page"><span class="num">03</span> Vídeo</a>
-    <a href="3d.html"><span class="num">04</span> 3D</a>
-    <a href="design.html"><span class="num">05</span> Design</a>
+    <a href="videos.html" aria-current="page"><span class="num">02</span> Vídeos</a>
+    <a href="design.html"><span class="num">03</span> Design</a>
+    <a href="social-media.html"><span class="num">04</span> Social Media</a>
+    <a href="3d.html"><span class="num">05</span> 3D</a>
   </nav>
 </div>
 
 <main>
-  <h2>Vídeo</h2>
-  <p class="kicker">da gravação à edição, ideia vira vídeo pronto pra rede</p>
+  <h2 class="surge">Vídeos</h2>
+  <p class="kicker surge">da gravação à edição!</p>
+  <p class="video-intro surge">180+ vídeos editados: roteirização, direção, captação e edição.</p>
 
-  <div class="grid">
-    <div class="card card--lilas surge">
-      <span class="numero-grande">180+</span>
-      <p>vídeos editados: roteirização, direção, captação e edição.</p>
+  <p class="section-title surge">Verticais · Reels e Shorts</p>
+  <p class="aviso surge">Marina, arrasta seus vídeos verticais pra pasta "media" com estes nomes: reel-1.mp4, reel-2.mp4, reel-3.mp4.</p>
+  <div class="videos-grid verticais">
+    <div class="video-card surge" id="reel-1" onmouseenter="this.querySelector('video').play()" onmouseleave="this.querySelector('video').pause()">
+      <video src="media/reel-1.mp4" muted loop playsinline preload="metadata"
+        onloadeddata="document.getElementById('reel-1').classList.add('cheio')"></video>
+      <div class="midia-vazia"><div class="icone">▷</div><span>Reel ou short</span><small>media/reel-1.mp4</small></div>
+      <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="legenda"><span class="titulo">Reel ou short</span></div>
+    </div>
+    <div class="video-card surge" id="reel-2" onmouseenter="this.querySelector('video').play()" onmouseleave="this.querySelector('video').pause()">
+      <video src="media/reel-2.mp4" muted loop playsinline preload="metadata"
+        onloadeddata="document.getElementById('reel-2').classList.add('cheio')"></video>
+      <div class="midia-vazia"><div class="icone">▷</div><span>Reel ou short</span><small>media/reel-2.mp4</small></div>
+      <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="legenda"><span class="titulo">Reel ou short</span></div>
+    </div>
+    <div class="video-card surge" id="reel-3" onmouseenter="this.querySelector('video').play()" onmouseleave="this.querySelector('video').pause()">
+      <video src="media/reel-3.mp4" muted loop playsinline preload="metadata"
+        onloadeddata="document.getElementById('reel-3').classList.add('cheio')"></video>
+      <div class="midia-vazia"><div class="icone">▷</div><span>Reel ou short</span><small>media/reel-3.mp4</small></div>
+      <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="legenda"><span class="titulo">Reel ou short</span></div>
     </div>
   </div>
 
-  <ul class="lista-limpa">
-    <li>Gravação e edição de vídeo institucional para grupo empresarial</li>
-    <li>Produção de vídeo apresentando a marca, para a Taiken Consultoria</li>
-    <li>Edição de vídeos curtos para Reels, TikToks e Shorts</li>
-  </ul>
-
-  <p class="section-title">Galeria</p>
-  <p class="aviso">Marina, coloca seus arquivos na pasta "media" com estes nomes: video-institucional.mp4 e video-reel.mp4.</p>
-  <div class="midia-grid">
-    <div class="midia-slot surge">
-      <video src="media/video-institucional.mp4" muted loop playsinline controls
-        onloadeddata="this.closest('.midia-slot').classList.add('cheio')"></video>
-      <div class="midia-vazia"><div class="icone">▷</div><span>Vídeo institucional</span><small>media/video-institucional.mp4</small></div>
+  <p class="section-title surge">Horizontais · Institucional</p>
+  <p class="aviso surge">Marina, arrasta seus vídeos horizontais pra pasta "media" com estes nomes: institucional-1.mp4, institucional-2.mp4.</p>
+  <div class="videos-grid horizontais">
+    <div class="video-card surge" id="inst-1" onmouseenter="this.querySelector('video').play()" onmouseleave="this.querySelector('video').pause()">
+      <video src="media/institucional-1.mp4" muted loop playsinline preload="metadata"
+        onloadeddata="document.getElementById('inst-1').classList.add('cheio')"></video>
+      <div class="midia-vazia"><div class="icone">▷</div><span>Vídeo institucional</span><small>media/institucional-1.mp4</small></div>
+      <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="legenda"><span class="titulo">Vídeo institucional</span></div>
     </div>
-    <div class="midia-slot surge">
-      <video src="media/video-reel.mp4" muted loop playsinline controls
-        onloadeddata="this.closest('.midia-slot').classList.add('cheio')"></video>
-      <div class="midia-vazia"><div class="icone">▷</div><span>Reel ou short</span><small>media/video-reel.mp4</small></div>
+    <div class="video-card surge" id="inst-2" onmouseenter="this.querySelector('video').play()" onmouseleave="this.querySelector('video').pause()">
+      <video src="media/institucional-2.mp4" muted loop playsinline preload="metadata"
+        onloadeddata="document.getElementById('inst-2').classList.add('cheio')"></video>
+      <div class="midia-vazia"><div class="icone">▷</div><span>Vídeo institucional</span><small>media/institucional-2.mp4</small></div>
+      <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+      <div class="legenda"><span class="titulo">Vídeo institucional</span></div>
     </div>
   </div>
 </main>
 
 <footer>Marina Ceconello · Portfólio pessoal</footer>
+
+<div class="botoes-flutuantes">
+  <a class="botao-flutuante" href="https://wa.me/5511972637970" target="_blank" rel="noopener" aria-label="Falar no WhatsApp" title="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.85.5 3.57 1.43 5.05L2 22l5.25-1.5a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.03c-.25.7-1.45 1.33-2 1.42-.51.08-1.15.11-1.86-.12-.43-.13-.98-.31-1.69-.6-2.98-1.29-4.92-4.28-5.07-4.48-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.6-.37.8-.37h.58c.19 0 .43-.02.63.48.25.62.84 2.1.91 2.25.07.15.12.33.02.52-.1.2-.15.33-.3.5-.15.17-.32.38-.46.51-.15.15-.3.31-.13.6.17.3.78 1.26 1.67 2.04 1.15 1.02 2.12 1.35 2.42 1.5.3.15.48.13.65-.05.21-.23.76-.86.96-1.16.2-.3.4-.25.66-.15.26.1 1.65.78 1.93.92.28.15.47.22.54.34.07.13.07.74-.18 1.43z"/></svg>
+  </a>
+</div>
 
 <script src="assets/script.js"></script>
 </body>
