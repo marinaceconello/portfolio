@@ -5,13 +5,15 @@
   --azul: #6395EC;
   --lilas: #9282DF;
   --sombra: rgba(5, 0, 12, 0.6);
-  --radius-card: 14px;
+  --radius-card: 2px;
   --radius-painel: 26px;
   --font-title: 'LoveloBlack', sans-serif;
   --font-editorial: 'LovelaceText', serif;
   --font-body: 'GlacialIndifference', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
   /* cor de destaque padrão da página — sobrescrita por body[data-acento] */
   --acento: var(--lilas);
+  --acento-fraca: color-mix(in srgb, var(--acento) 28%, transparent);
 }
 
 body[data-acento="azul"]{ --acento: var(--azul); }
@@ -177,15 +179,16 @@ a{ color: var(--branco); }
   border-bottom: 1px solid rgba(237,234,248,0.1);
 }
 .barra-nav .logo-voltar{
-  font-family: var(--font-editorial);
-  font-style: italic;
-  font-weight: 700;
-  color: var(--acento);
-  font-size: 1.15rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--branco);
+  font-size: 0.82rem;
+  text-transform: uppercase;
   text-decoration: none;
   flex: 0 0 auto;
 }
-.barra-nav .logo-voltar:hover{ opacity: 0.8; }
+.barra-nav .logo-voltar:hover{ color: var(--acento); }
 
 .nav-paginas{
   display: flex; gap: 0.2rem;
@@ -207,18 +210,27 @@ a{ color: var(--branco); }
   transition: opacity 0.2s, border-color 0.2s;
 }
 .nav-paginas a .num{
-  font-family: var(--font-editorial);
-  font-style: italic; font-weight: 700;
+  font-family: var(--font-mono);
+  font-weight: 600;
   color: var(--acento);
-  font-size: 0.85rem;
+  font-size: 0.78rem;
 }
 .nav-paginas a:hover{ opacity: 0.85; }
 .nav-paginas a[aria-current="page"]{ opacity: 1; border-bottom-color: var(--acento); }
 
 /* ---------- CONTEÚDO DAS PÁGINAS INTERNAS ---------- */
-main{ max-width: 980px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+main{ max-width: 980px; margin: 0 auto; padding: 3rem 1.5rem 5rem; position: relative; }
+
+.arco-marca{
+  position: absolute; top: 0; right: 1.5rem; z-index: 0;
+  width: 150px; height: 300px;
+  opacity: 0.07;
+  pointer-events: none;
+}
+@media (max-width: 760px){ .arco-marca{ width: 100px; height: 220px; } }
 
 main h2{
+  position: relative; z-index: 1;
   font-family: var(--font-title);
   text-transform: uppercase;
   font-size: clamp(1.8rem, 6vw, 2.6rem);
@@ -226,10 +238,13 @@ main h2{
   margin: 0 0 0.3rem;
 }
 main .kicker{
-  font-family: var(--font-editorial);
-  font-style: italic; font-weight: 700;
+  position: relative; z-index: 1;
+  font-family: var(--font-mono);
+  font-weight: 500;
   color: var(--acento);
-  font-size: 1.05rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   margin: 0 0 2rem;
 }
 
@@ -250,21 +265,15 @@ main .kicker{
 .card{
   position: relative;
   background: var(--painel);
+  border: 1px solid var(--acento-fraca);
   border-radius: var(--radius-card);
   padding: 1.6rem;
-  box-shadow: 0 18px 40px var(--sombra);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 .card:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 26px 54px var(--sombra);
+  transform: translateY(-3px);
+  border-color: var(--acento);
 }
-.card::before, .card::after{
-  content: ""; position: absolute; width: 18px; height: 18px;
-  border: 1.5px solid var(--acento); opacity: 0.7;
-}
-.card::before{ top: -1px; left: -1px; border-right: none; border-bottom: none; }
-.card::after{ bottom: -1px; right: -1px; border-left: none; border-top: none; }
 
 .grid{
   display: grid;
@@ -278,12 +287,15 @@ main .kicker{
 .numero-grande{ display: block; font-family: var(--font-title); font-size: 2.4rem; color: var(--acento); line-height: 1; margin-bottom: 0.3rem; }
 
 .section-title{
-  font-family: var(--font-editorial);
-  font-style: italic; font-weight: 700;
-  font-size: 1.15rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--acento);
   margin: 2.6rem 0 1.1rem;
 }
+.section-title::before{ content: "// "; opacity: 0.6; }
 
 .midia-slot{
   position: relative;
@@ -306,10 +318,10 @@ main .kicker{
 }
 .midia-vazia .icone{
   min-width: 34px; height: 34px; padding: 0 0.5rem;
-  border: 1.5px solid var(--acento); border-radius: 999px;
+  border: 1px solid var(--acento); border-radius: 2px;
   display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-editorial); font-style: italic; font-weight: 700;
-  color: var(--acento); font-size: 0.78rem; white-space: nowrap;
+  font-family: var(--font-mono); font-weight: 600;
+  color: var(--acento); font-size: 0.72rem; white-space: nowrap;
 }
 .midia-vazia span{ font-size: 0.82rem; opacity: 0.75; max-width: 22ch; }
 .midia-vazia small{ font-size: 0.7rem; opacity: 0.45; font-family: monospace; }
@@ -333,8 +345,8 @@ main .kicker{
   padding: 0.9rem 0; font-size: 0.95rem;
 }
 .formacao-item .quando{
-  font-family: var(--font-editorial); font-style: italic; font-weight: 700;
-  color: var(--acento); white-space: nowrap; font-size: 0.85rem;
+  font-family: var(--font-mono); font-weight: 600;
+  color: var(--acento); white-space: nowrap; font-size: 0.78rem;
 }
 
 .aviso{ font-size: 0.82rem; opacity: 0.6; margin-top: -1.6rem; margin-bottom: 2.5rem; }
@@ -354,8 +366,8 @@ main .kicker{
 .icones-contato{ display: flex; flex-wrap: wrap; gap: 0.9rem; margin: 1.6rem 0; }
 .icone-contato{
   width: 46px; height: 46px;
-  border-radius: 50%;
-  border: 1.5px solid rgba(237,234,248,0.3);
+  border-radius: 2px;
+  border: 1px solid rgba(237,234,248,0.3);
   display: flex; align-items: center; justify-content: center;
   color: var(--branco);
   text-decoration: none;
@@ -366,10 +378,10 @@ main .kicker{
 .icone-contato:hover{ transform: scale(1.08); border-color: var(--acento); color: var(--acento); }
 
 .cta-final{
-  font-family: var(--font-editorial);
-  font-style: italic; font-weight: 700;
+  font-family: var(--font-title);
+  text-transform: uppercase;
   color: var(--acento);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   display: block;
   margin-top: 0.6rem;
 }
@@ -435,9 +447,10 @@ footer{ text-align: center; padding: 2rem; font-size: 0.78rem; opacity: 0.5; }
 .video-card.cheio .midia-vazia{ display: none; }
 .video-card .midia-vazia .icone{
   min-width: 34px; height: 34px; padding: 0 0.5rem;
-  border: 1.5px solid var(--acento); border-radius: 999px;
+  border: 1px solid var(--acento); border-radius: 2px;
   display: flex; align-items: center; justify-content: center;
-  color: var(--acento); font-size: 0.78rem; font-weight: 700; white-space: nowrap;
+  color: var(--acento); font-size: 0.72rem; font-weight: 600; white-space: nowrap;
+  font-family: var(--font-mono);
 }
 .video-card .midia-vazia span{ font-size: 0.78rem; opacity: 0.75; max-width: 20ch; }
 .video-card .midia-vazia small{ font-size: 0.68rem; opacity: 0.4; font-family: monospace; }
