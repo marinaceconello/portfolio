@@ -6,7 +6,6 @@
 <title>Design — Marina Ceconello</title>
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/style.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&display=swap">
 </head>
 <body data-acento="azul">
 
@@ -30,16 +29,30 @@
     <line x1="15" y1="210" x2="135" y2="210" stroke-width="1"/>
   </svg>
   <h2 class="surge">Design</h2>
-  <p class="kicker surge">03 // marca, do conceito ao manual de uso</p>
+  <p class="kicker surge">marca, do conceito ao manual de uso</p>
 
-  <div class="grid">
-    <div class="card surge">
-      <h3>Taiken Consultoria (TCC)</h3>
-      <p>Design de logotipo, paleta e tipografia, confecção de uniformes e produção de vídeo de apresentação da marca. Projeto de planejamento estratégico completo.</p>
+  <p class="section-title surge">Manuais de identidade visual completos</p>
+  <p class="aviso surge">Marina, coloca os prints de capa de cada projeto na pasta "media" com estes nomes: capa-taiken.jpg e capa-grupo-atlas.jpg.</p>
+  <div class="grid capas">
+    <div class="capa-card surge" onclick="document.getElementById('modal-taiken').classList.add('aberto')" role="button" tabindex="0" onkeydown="if(event.key==='Enter') this.click()">
+      <div class="capa-img">
+        <img src="media/capa-taiken.jpg" alt="Capa do manual de identidade visual da Taiken Consultoria" onload="this.closest('.capa-card').classList.add('cheio')">
+        <div class="capa-vazia"><span>Capa do projeto</span><small>media/capa-taiken.jpg</small></div>
+      </div>
+      <div class="capa-legenda">
+        <h3>Taiken Consultoria</h3>
+        <span class="ver-behance">Ver manual completo →</span>
+      </div>
     </div>
-    <div class="card surge">
-      <h3>Este site</h3>
-      <p>As cores, as fontes e as molduras que você está vendo agora seguem o meu próprio manual de marca pessoal. Prova de conceito, aplicada na prática.</p>
+    <div class="capa-card surge" onclick="document.getElementById('modal-atlas').classList.add('aberto')" role="button" tabindex="0" onkeydown="if(event.key==='Enter') this.click()">
+      <div class="capa-img">
+        <img src="media/capa-grupo-atlas.jpg" alt="Capa do manual de identidade visual do Grupo Atlas" onload="this.closest('.capa-card').classList.add('cheio')">
+        <div class="capa-vazia"><span>Capa do projeto</span><small>media/capa-grupo-atlas.jpg</small></div>
+      </div>
+      <div class="capa-legenda">
+        <h3>Grupo Atlas</h3>
+        <span class="ver-behance">Ver manual completo →</span>
+      </div>
     </div>
   </div>
 
@@ -47,6 +60,13 @@
     <div class="card surge"><span class="numero-grande">8</span><p>marcas criadas do zero: logotipo, identidade visual, portfólio, manual de marca e website</p></div>
     <div class="card surge"><span class="numero-grande">9</span><p>sites publicados: landing pages e sites institucionais em WordPress, HTML, SEO e formulários</p></div>
     <div class="card surge"><span class="numero-grande">500+</span><p>artes postadas, entre peças institucionais e operacionais</p></div>
+  </div>
+
+  <div class="grid">
+    <div class="card surge">
+      <h3>Este site</h3>
+      <p>As cores, as fontes e as molduras que você está vendo agora seguem o meu próprio manual de marca pessoal. Prova de conceito, aplicada na prática.</p>
+    </div>
   </div>
 
   <p class="section-title surge">Marcas que já criei do zero</p>
@@ -91,11 +111,24 @@
       <div class="midia-vazia"><div class="icone">IV</div><span>Rebranding Howling</span><small>media/rebranding-howling.jpg</small></div>
     </div>
     <div class="midia-slot surge">
-      <img src="media/manual-atlas.jpg" alt="Manual de identidade" onload="this.closest('.midia-slot').classList.add('cheio')">
-      <div class="midia-vazia"><div class="icone">IV</div><span>Manual de identidade</span><small>media/manual-atlas.jpg</small></div>
+      <img src="media/manual-atlas.jpg" alt="Manual de identidade Grupo Atlas" onload="this.closest('.midia-slot').classList.add('cheio')">
+      <div class="midia-vazia"><div class="icone">IV</div><span>Manual de identidade Grupo Atlas</span><small>media/manual-atlas.jpg</small></div>
     </div>
   </div>
 </main>
+
+<div class="behance-modal" id="modal-taiken" onclick="if(event.target===this) this.classList.remove('aberto')">
+  <div class="behance-modal-conteudo">
+    <button class="fechar-modal" onclick="document.getElementById('modal-taiken').classList.remove('aberto')" aria-label="Fechar">✕</button>
+    <iframe src="https://www.behance.net/embed/project/218520233?ilo0=1" loading="lazy" allowfullscreen title="Manual de Identidade Visual — Taiken Consultoria"></iframe>
+  </div>
+</div>
+<div class="behance-modal" id="modal-atlas" onclick="if(event.target===this) this.classList.remove('aberto')">
+  <div class="behance-modal-conteudo">
+    <button class="fechar-modal" onclick="document.getElementById('modal-atlas').classList.remove('aberto')" aria-label="Fechar">✕</button>
+    <iframe src="https://www.behance.net/embed/project/240668843?ilo0=1" loading="lazy" allowfullscreen title="Manual de Identidade Visual — Grupo Atlas"></iframe>
+  </div>
+</div>
 
 <footer>Marina Ceconello · Portfólio pessoal</footer>
 
